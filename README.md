@@ -21,21 +21,39 @@ Make sure to put the file in the same directory with the script.
 In the command prompt or Terminal window, type the following, and press enter:
 
 ```shell
-python main.py <file> <size>
+python main.py <file>
 ```
 
 Replace the string `<file>` from above with the `BrowserHistory.json` JSON file from Google Takeout.
 
-The integer `<size>` is a positional and optional argument which defines the number of links *(order descending by number of visits)* to be displayed. *(20 by default)*
+### Usage:
 
-#### Example:
+**usage:**
+
+main.py [-h] [-s SIZE] [-d DAYS] file
+
+**positional arguments:**
+
+  file                  Your browsing history JSON file from Google Takeout
+
+**optional arguments:**
+
+  -s, --size            number of sites display *(20 by default)*
+  
+  -d, --days            number of last X days to show data for *(365 by default)*
+
+### Examples:
 
 ```shell
 python main.py BrowserHistory.json
 ```
 
 ```shell
-python main.py BrowserHistory.json 50
+python main.py BrowserHistory.json -s=50
 ```
 
-### 4. Review the results and enjoy, I guess :D
+```shell
+python main.py BrowserHistory.json -s=50 --days=90
+```
+
+### 4. Review the results and enjoy

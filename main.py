@@ -16,7 +16,6 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    print(args.days)
     print("(1/2): Processing data")
     refined_data = refine(args.file, args.days)
 
