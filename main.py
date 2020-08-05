@@ -20,4 +20,4 @@ if __name__ == '__main__':
     refined_data = refine(args.file, args.days)
 
     print("(2/2): Generating graph")
-    generate_graph(refined_data, args.size)
+    generate_graph(refined_data, args.size, args.days)

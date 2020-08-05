@@ -1,15 +1,18 @@
 
 import json
+import time
 import numpy as np
 from heapq import nlargest
 from operator import itemgetter
 import matplotlib.pyplot as plt
 
+DAY = 86400000 # miliseconds
 from ignore import IGNORE
 
 # process json file
 def refine(json_file : str, days : int):
-
+    
+    required_time = int(round(time.time() * 1000)) - (days * DAY)
     # read json file
     with open(json_file, mode = 'r', encoding="utf8") as data_file:
         data = json.load(data_file)
@@ -19,6 +22,10 @@ def refine(json_file : str, days : int):
     # process data
     for data_set in data['Browser History']:
         #icon = data_set['favicon_url']
+        timestamp = round(int(data_set['time_usec']) / 1000)
+        if required_time > timestamp:
+            continue
+        
         url = data_set['url']
         try:
             url = url_formatter(url)
@@ -65,7 +72,7 @@ def url_formatter(url : str):
     return url
 
 # generate chart
-def generate_graph(data : list, size : int):
+def generate_graph(data : list, size : int, days : int):
 
     # sort data
     sorted_data = nlargest(size, data, key=itemgetter(1))
@@ -79,7 +86,7 @@ def generate_graph(data : list, size : int):
     fig, ax = plt.subplots()
     ax.invert_yaxis()
     ax.set_xlabel('Number of visits')
-    ax.set_title('Top %d most visited websites' % size)
+    ax.set_title('Top %d most visited websites in the last %d days' % (size, days))
 
     # set figure variables
     ax.barh(ar_sites, occurences, align='center', color="#247ba0")
