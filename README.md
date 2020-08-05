@@ -56,4 +56,4 @@ python main.py BrowserHistory.json -s=50
 python main.py BrowserHistory.json -s=50 --days=90
 ```
 
-### 4. Review the results and enjoy
+### 4. Review the results and if you enjoyed the project, don't hesitate to leave a star. Thanks!
