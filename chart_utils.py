@@ -10,7 +10,7 @@ DAY = 86400000 # miliseconds
 from ignore import IGNORE
 
 # process json file
-def refine(json_file : str, days : int):
+def chart_json(json_file : str, days : int):
     
     required_time = int(round(time.time() * 1000)) - (days * DAY)
     # read json file
@@ -72,7 +72,7 @@ def url_formatter(url : str):
     return url
 
 # generate chart
-def generate_graph(data : list, size : int, days : int):
+def generate_chart(data : list, size : int, days : int):
 
     # sort data
     sorted_data = nlargest(size, data, key=itemgetter(1))

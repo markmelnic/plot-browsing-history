@@ -21,39 +21,45 @@ Make sure to put the file in the same directory with the script.
 In the command prompt or Terminal window, type the following, and press enter:
 
 ```shell
-python main.py <file>
+python main.py <file> <type>
 ```
 
 Replace the string `<file>` from above with the `BrowserHistory.json` JSON file from Google Takeout.
 
+Replace `<type>` with either `chart` to display the most visited sites chart or `hist` to see an activity histogram.
+
 ### Usage:
 
-**usage:**
+**usage:** main.py [-h] [-s SIZE] [-d DAYS] file type
 
-main.py [-h] [-s SIZE] [-d DAYS] file
+<br>
 
 **positional arguments:**
 
-  file                  Your browsing history JSON file from Google Takeout
+  __file__                  Your browsing history JSON file from Google Takeout.
+
+  __type__                  Option to display either most visited sites chart or an activity histogram. Values: `chart` for chart and `hist` for histogram.
+
+<br>
 
 **optional arguments:**
 
-  -s, --size            number of sites display *(20 by default)*
+  __-s, --size__            Number of sites display *(20 by default)*
   
-  -d, --days            number of last X days to show data for *(365 by default)*
+  __-d, --days__            Number of last X days to show data for *(365 by default)*
 
 ### Examples:
 
 ```shell
-python main.py BrowserHistory.json
+python main.py BrowserHistory.json chart
 ```
 
 ```shell
-python main.py BrowserHistory.json -s=50
+python main.py BrowserHistory.json chart -s=50
 ```
 
 ```shell
-python main.py BrowserHistory.json -s=50 --days=90
+python main.py BrowserHistory.json chart -s=50 --days=90
 ```
 
 ### 4. Review the results and if you enjoyed the project, don't hesitate to leave a star. Thanks!
