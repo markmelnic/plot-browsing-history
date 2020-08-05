@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from ignore import IGNORE
 
 # process json file
-def refine(json_file : str):
+def refine(json_file : str, days : int):
 
     # read json file
     with open(json_file, mode = 'r', encoding="utf8") as data_file:
