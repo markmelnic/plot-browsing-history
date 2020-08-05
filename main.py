@@ -14,7 +14,7 @@ if __name__ == '__main__':
     parser.add_argument("-s", "--size", dest="size", type=int, required=False,
     help="Number of top sites to be displayed.", default=20)
     parser.add_argument("-d", "--days", dest="days", type=int, required=False,
-    help="Number of x last days of data to be displayed.", default=365)
+    help="Number of x last days of data to be displayed.", default=60)
 
     args = parser.parse_args()
 
@@ -27,5 +27,8 @@ if __name__ == '__main__':
 
     elif args.type.lower() == 'hist':
         print("(1/2): Processing data")
-        
+        data = hist_json(args.file, args.days)
+
         print("(2/2): Generating histogram")
+        generate_hist(data, args.days)
+

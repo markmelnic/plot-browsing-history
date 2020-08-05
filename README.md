@@ -2,7 +2,7 @@
 
 A tool to visualize your chrome browsing history with google takeout data.
 
-![Imgur](https://i.imgur.com/3u9ZdSG.png)
+![Chart Example](https://i.imgur.com/K5BBJ3L.png)
 
 ## Getting Started
 
@@ -28,6 +28,8 @@ Replace the string `<file>` from above with the `BrowserHistory.json` JSON file 
 
 Replace `<type>` with either `chart` to display the most visited sites chart or `hist` to see an activity histogram.
 
+![Histogram Example](https://i.imgur.com/fwYkMa5.png)
+
 ### Usage:
 
 **usage:** main.py [-h] [-s SIZE] [-d DAYS] file type
@@ -46,7 +48,7 @@ Replace `<type>` with either `chart` to display the most visited sites chart or 
 
   __-s, --size__            Number of sites display *(20 by default)*
   
-  __-d, --days__            Number of last X days to show data for *(365 by default)*
+  __-d, --days__            Number of last X days to show data for *(60 by default)*
 
 ### Examples:
 
@@ -60,6 +62,14 @@ python main.py BrowserHistory.json chart -s=50
 
 ```shell
 python main.py BrowserHistory.json chart -s=50 --days=90
+```
+
+```shell
+python main.py BrowserHistory.json hist
+```
+
+```shell
+python main.py BrowserHistory.json hist -d=30
 ```
 
 ### 4. Review the results and if you enjoyed the project, don't hesitate to leave a star. Thanks!
