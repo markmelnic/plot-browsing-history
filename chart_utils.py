@@ -10,7 +10,7 @@ DAY = 86400000 # miliseconds
 from ignore import IGNORE
 
 # process json file
-def chart_json(json_file : str, days : int):
+def chart_json(json_file : str, days : int) -> list:
     
     required_time = int(round(time.time() * 1000)) - (days * DAY)
     # read json file
@@ -46,7 +46,7 @@ def chart_json(json_file : str, days : int):
     return merged_list
 
 # format the url to a standart format "url.TLD"
-def url_formatter(url : str):
+def url_formatter(url : str) -> str:
 
     # check if needs to be skipped
     for ign in IGNORE:
