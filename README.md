@@ -57,11 +57,11 @@ python main.py BrowserHistory.json chart
 ```
 
 ```shell
-python main.py BrowserHistory.json chart -s=50
+python main.py BrowserHistory.json chart -s 50
 ```
 
 ```shell
-python main.py BrowserHistory.json chart -s=50 --days=90
+python main.py BrowserHistory.json chart -s 50 --days 90
 ```
 
 ```shell
@@ -69,7 +69,7 @@ python main.py BrowserHistory.json hist
 ```
 
 ```shell
-python main.py BrowserHistory.json hist -d=30
+python main.py BrowserHistory.json hist -d 30
 ```
 
 ### 4. Review the results and if you enjoyed the project, don't hesitate to leave a star. Thanks!
