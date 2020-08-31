@@ -12,6 +12,11 @@ First follow [these instructions](https://github.com/markmelnic/Setup-Instructio
 
 ### 2. Get Your Location Data
 
+Here you can find out how to download your Google data: <https://support.google.com/accounts/answer/3024190?hl=en></br>
+Here you can download all of the data that Google has stored on you: <https://takeout.google.com/>
+
+To use this script, you only need to download your the data specified in the repository description, which Google will provide to you.
+
 To use this script, you only need to download your "Chrome BrowserHistory", which Google will provide to you as a JSON file by default.
 
 Make sure to put the file in the same directory with the script.
