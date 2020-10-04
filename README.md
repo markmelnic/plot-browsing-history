@@ -8,7 +8,7 @@ A tool to visualize your chrome browsing history with google takeout data.
 
 ### 1. Initial setup
 
-First follow [these instructions](https://github.com/markmelnic/Setup-Instructions) and make sure you satisfy all requirements.
+First follow [these instructions](https://gist.github.com/markmelnic/b5a6d399b2c08008c989829cbf9c3618) and make sure you satisfy all requirements.
 
 ### 2. Get Your Location Data
 
