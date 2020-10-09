@@ -1,7 +1,7 @@
 # Visualize your chrome browsing history
 
 A tool to visualize your chrome browsing history with google takeout data.
-![Chart Example](https://i.imgur.com/JFEZZAY.png)
+![Chart Example](https://i.imgur.com/sJCc9gq.png)
 
 ## Getting Started
 
