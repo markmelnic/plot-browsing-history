@@ -1,8 +1,7 @@
 # Visualize your chrome browsing history
 
 A tool to visualize your chrome browsing history with google takeout data.
-
-![Chart Example](https://i.imgur.com/K5BBJ3L.png)
+![Chart Example](https://i.imgur.com/JFEZZAY.png)
 
 ## Getting Started
 
@@ -26,30 +25,26 @@ Make sure to put the file in the same directory with the script.
 In the command prompt or Terminal window, type the following, and press enter:
 
 ```shell
-python main.py <file> <type>
+python main.py <file>
 ```
 
-Replace the string `<file>` from above with the `BrowserHistory.json` JSON file from Google Takeout.
-
-Replace `<type>` with either `chart` to display the most visited sites chart or `hist` to see an activity histogram.
-
-![Histogram Example](https://i.imgur.com/fwYkMa5.png)
+Replace `<file>` with `BrowserHistory.json` file from Google Takeout (the file name might variate, so use the one suitable in your case).
 
 ### Usage:
 
-**usage:** main.py [-h] [-s SIZE] [-d DAYS] file type
+**usage:** `main.py <file> [-h] [-s SIZE] [-d DAYS]`
 
 <br>
 
 **positional arguments:**
 
-  __file__                  Your browsing history JSON file from Google Takeout.
-
-  __type__                  Option to display either most visited sites chart or an activity histogram. Values: `chart` for chart and `hist` for histogram.
+  __file__                  Your JSON file downloaded from Google Takeout.
 
 <br>
 
 **optional arguments:**
+
+  __-h__            Help option, prints the usage section in the console.
 
   __-s, --size__            Number of sites display *(20 by default)*
   
@@ -58,23 +53,19 @@ Replace `<type>` with either `chart` to display the most visited sites chart or 
 ### Examples:
 
 ```shell
-python main.py BrowserHistory.json chart
+python main.py BrowserHistory.json
 ```
 
 ```shell
-python main.py BrowserHistory.json chart -s 50
+python main.py BrowserHistory.json -d 50
 ```
 
 ```shell
-python main.py BrowserHistory.json chart -s 50 --days 90
+python main.py BrowserHistory.json --size 30
 ```
 
 ```shell
-python main.py BrowserHistory.json hist
-```
-
-```shell
-python main.py BrowserHistory.json hist -d 30
+python main.py BrowserHistory.json -s 50 --days 90
 ```
 
 ### 4. Review the results and if you enjoyed the project, don't hesitate to leave a star. Thanks!
