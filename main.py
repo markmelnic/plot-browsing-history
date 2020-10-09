@@ -7,7 +7,7 @@ if __name__ == '__main__':
 
     parser = ArgumentParser(formatter_class=RawTextHelpFormatter)
 
-    parser.add_argument("file", metavar="file", type=str, help="JSON file.")
+    parser.add_argument("file", metavar="file", type=str, help="Google takeout JSON file.")
     parser.add_argument("-s", "--size", dest="size", type=int, required=False,
     help="Number of top sites to be displayed.", default=20)
     parser.add_argument("-d", "--days", dest="days", type=int, required=False,
