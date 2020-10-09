@@ -30,17 +30,13 @@ python main.py <file>
 
 Replace `<file>` with `BrowserHistory.json` file from Google Takeout (the file name might variate, so use the one suitable in your case).
 
-### Usage:
+### 4. Usage
 
-**usage:** `main.py <file> [-h] [-s SIZE] [-d DAYS]`
-
-<br>
+`main.py <file> [-h] [-s SIZE] [-d DAYS]`
 
 **positional arguments:**
 
   __file__                  Your JSON file downloaded from Google Takeout.
-
-<br>
 
 **optional arguments:**
 
@@ -50,7 +46,7 @@ Replace `<file>` with `BrowserHistory.json` file from Google Takeout (the file n
   
   __-d, --days__            Number of last X days to show data for *(60 by default)*
 
-### Examples:
+### 5. Examples
 
 ```shell
 python main.py BrowserHistory.json
@@ -68,4 +64,4 @@ python main.py BrowserHistory.json --size 30
 python main.py BrowserHistory.json -s 50 --days 90
 ```
 
-### 4. Review the results and if you enjoyed the project, don't hesitate to leave a star. Thanks!
+### 6. Review the results and if you enjoyed the project, don't hesitate to leave a star. Thanks!
