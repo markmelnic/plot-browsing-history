@@ -34,7 +34,8 @@ def generate_plot(data : list, size : int, days : int):
         links_plot.text(oc + oc * 0.005, ind + .25, str(oc), color='#565656')
 
     # ACTIVITY PLOT
-    act_plot.set_xlabel('Nr. of links visited')
+    act_plot.set_ylabel('Nr. of links visited')
+    act_plot.set_xlabel('Nr. of days ago from today')
     act_plot.set_title('Number of links visited per day in the last %d days.\n This histogram is meant to display consistency.' % (days))
     # separate data
     days_ago = [el[0] for el in data[1]]
