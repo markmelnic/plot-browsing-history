@@ -11,7 +11,7 @@ from ignore import IGNORE
 DAY = 86400000 # miliseconds
 
 # generate plots
-def generate_plot(data : list, size : int, days : int):
+def generate_plots(data : list, size : int, days : int):
     # define figure
     fig, (links_plot, act_plot) = plt.subplots(2)
     fig.tight_layout()
@@ -48,7 +48,6 @@ def generate_plot(data : list, size : int, days : int):
 
 # process json file
 def chart_json(json_file : str, days : int) -> list:
-
     required_time = int(round(time.time() * 1000)) - (days * DAY)
     # read json file
     with open(json_file, mode = 'r', encoding="utf8") as data_file:
@@ -78,13 +77,10 @@ def chart_json(json_file : str, days : int) -> list:
             instances[sites.index(url)] += 1
 
     # merge url and instance to a tuple
-    merged_list = [(site, inst) for site, inst in zip(sites, instances)]
-
-    return merged_list
+    return [(site, inst) for site, inst in zip(sites, instances)]
 
 # format the url to a standart format "url.TLD"
 def url_formatter(url : str) -> str:
-
     # check if needs to be skipped
     for ign in IGNORE:
         assert (ign not in url)
@@ -110,7 +106,6 @@ def url_formatter(url : str) -> str:
 
 # built histogram dataset
 def hist_json(json_file : str, days : int) -> list:
-
     current_time = int(round(time.time() * 1000))
     # read json file
     with open(json_file, mode = 'r', encoding="utf8") as data_file:

@@ -1,10 +1,11 @@
+import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s]: %(message)s')
 
 from utils import generate_plot, chart_json, hist_json
 from argparse import ArgumentParser, RawTextHelpFormatter
 
 
 if __name__ == '__main__':
-
     parser = ArgumentParser(formatter_class=RawTextHelpFormatter)
 
     parser.add_argument("file", metavar="file", type=str, help="Google takeout JSON file.")
@@ -15,10 +16,11 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    print("(1/2): Processing data")
-    data = []
-    data.append(chart_json(args.file, args.days))
-    data.append(hist_json(args.file, args.days))
+    logging.info("(1/2): Processing data")
+    data = [
+        chart_json(args.file, args.days),
+        hist_json(args.file, args.days),
+    ]
 
-    print("(2/2): Generating graph")
-    generate_plot(data, args.size, args.days)
+    logging.info("(2/2): Generating graph")
+    generate_plots(data, args.size, args.days)
