@@ -1,10 +1,10 @@
 
 import json, time
 import numpy as np
-import scipy.stats as st
-import matplotlib.pyplot as plt
 from heapq import nlargest
 from operator import itemgetter
+import matplotlib.pyplot as plt
+from urllib.parse import urlparse
 
 from ignore import IGNORE
 
@@ -15,7 +15,6 @@ def generate_plots(data : list, size : int, days : int):
     # define figure
     fig, (links_plot, act_plot) = plt.subplots(2)
     fig.tight_layout()
-    fig.canvas.set_window_title("Browser History Visualizer")
 
     # LINKS PLOT
     links_plot.invert_yaxis()
@@ -64,7 +63,7 @@ def chart_json(json_file : str, days : int) -> list:
 
         url = data_set['url']
         try:
-            url = url_formatter(url)
+            url = urlparse(url).netloc.replace("www.", "")
         except AssertionError:
             continue
 
@@ -78,31 +77,6 @@ def chart_json(json_file : str, days : int) -> list:
 
     # merge url and instance to a tuple
     return [(site, inst) for site, inst in zip(sites, instances)]
-
-# format the url to a standart format "url.TLD"
-def url_formatter(url : str) -> str:
-    # check if needs to be skipped
-    for ign in IGNORE:
-        assert (ign not in url)
-
-    # remove string following TLD
-    url = '/'.join(url.split('/')[:3])
-
-    # subtract subdomains
-    dot_index = [i for i, ltr in enumerate(url) if ltr == '.']
-    if len(dot_index) > 1:
-        url = url[: url.find('/') + 2] + url[dot_index[-2] + 1 :]
-
-    # subtract port
-    colon_index = [i for i, ltr in enumerate(url) if ltr == ':']
-    if len(colon_index) > 1:
-        url = url[: colon_index[-1]]
-
-    # remove url protocol
-    url = url.replace('http://', '').replace('https://', '')
-
-    assert (len(url) > 3)
-    return url
 
 # built histogram dataset
 def hist_json(json_file : str, days : int) -> list:

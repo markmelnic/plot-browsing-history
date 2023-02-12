@@ -1,7 +1,7 @@
 import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s]: %(message)s')
 
-from utils import generate_plot, chart_json, hist_json
+from utils import generate_plots, chart_json, hist_json
 from argparse import ArgumentParser, RawTextHelpFormatter
 
 
